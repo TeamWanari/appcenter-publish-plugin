@@ -3,7 +3,13 @@ language: java
 jdk:
 - oraclejdk8
 
-install: ./gradlew clean assemble
+jobs:
+  include:
+  - stage: build
+    script: ./gradlew clean assemble
+  - stage: deploy
+    if: branch = master AND tag =~ ^(\d*\.)+\d*$
+    script: ./gradlew publishPlugins
 
 before_cache:
 - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
