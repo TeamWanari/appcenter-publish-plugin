@@ -1,7 +1,8 @@
 # appcenter-publish-plugin
 
 [![Kotlin 1.2.71](https://img.shields.io/badge/Kotlin-1.2.71-blue.svg)](http://kotlinlang.org)
-[![Latest version](https://img.shields.io/github/release/TeamWanari/appcenter-publish-plugin.svg)](https://github.com/TeamWanari/appcenter-publish-plugin/releases)
+[![Gradle Plugin](https://img.shields.io/github/release/TeamWanari/appcenter-publish-plugin.svg)](https://plugins.gradle.org/plugin/com.teamwanari.appcenter-publish-plugin)
+[![JitPack Release](https://jitpack.io/v/TeamWanari/appcenter-publish-plugin.svg)](https://jitpack.io/#TeamWanari/appcenter-publish-plugin)
 [![Travis](https://travis-ci.org/TeamWanari/appcenter-publish-plugin.svg?branch=master)](https://travis-ci.org/TeamWanari/appcenter-publish-plugin/builds)
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/TeamWanari/appcenter-publish-plugin/blob/master/LICENSE)
 
@@ -77,5 +78,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
-
