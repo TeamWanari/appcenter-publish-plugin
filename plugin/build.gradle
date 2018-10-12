@@ -1,0 +1,51 @@
+buildscript {
+    ext.kotlin_version = '1.2.71'
+    ext.serialization_version = '0.6.2'
+    ext.okhttp = '3.11.0'
+
+    repositories {
+        jcenter()
+        google()
+        maven { url "https://kotlin.bintray.com/kotlinx" }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlinx:kotlinx-gradle-serialization-plugin:$serialization_version"
+    }
+}
+
+repositories {
+    jcenter()
+    google()
+    mavenCentral()
+    maven { url "https://kotlin.bintray.com/kotlinx" }   
+}
+
+
+apply plugin: 'java-gradle-plugin'
+apply plugin: 'kotlin'
+apply plugin: 'kotlinx-serialization'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    api "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serialization_version"
+    compileOnly gradleApi()
+    implementation "com.squareup.okhttp3:okhttp:$okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp"
+}
+
+gradlePlugin {
+    plugins {
+        simplePlugin {
+            id = 'com.teamwanari.appcenter-publish-plugin'
+            displayName = 'AppCenterPlugin'
+            description = 'Uploads selected artifacts to AppCenter.'
+            implementationClass = 'com.teamwanari.appcenter.AppCenterPlugin'
+        }
+    }
+}
+
