@@ -1,7 +1,7 @@
 buildscript {
     ext.kotlin_version = '1.2.71'
-    ext.serialization_version = '0.6.2'
     ext.okhttp = '3.11.0'
+    ext.gson = '2.8.5'
 
     ext['gradle.publish.key'] = System.env.gradlePublishKey
     ext['gradle.publish.secret'] = System.env.gradlePublishSecret
@@ -9,10 +9,18 @@ buildscript {
     repositories {
         jcenter()
         google()
-        maven { url "https://kotlin.bintray.com/kotlinx" }
+        maven { url "https://plugins.gradle.org/m2/" }
     }
 
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.gradle.publish:plugin-publish-plugin:0.10.0"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
     }
 }
