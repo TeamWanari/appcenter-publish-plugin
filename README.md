@@ -1,7 +1,8 @@
 # appcenter-publish-plugin
 
 [![Kotlin 1.2.71](https://img.shields.io/badge/Kotlin-1.2.71-blue.svg)](http://kotlinlang.org)
-[![Gradle Plugin](https://img.shields.io/github/release/TeamWanari/appcenter-publish-plugin.svg)](https://plugins.gradle.org/plugin/com.teamwanari.appcenter-publish-plugin)
+[![Releases](https://img.shields.io/github/release/TeamWanari/appcenter-publish-plugin.svg)](https://github.com/TeamWanari/appcenter-publish-plugin/releases)
+[![Gradle Plugin](https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/gradle/plugin/appcenter-publish-plugin/plugin/maven-metadata.xml.svg?label=Gradle%20Plugin&style=flat)](https://plugins.gradle.org/plugin/com.teamwanari.appcenter-publish-plugin)
 [![JitPack Release](https://jitpack.io/v/TeamWanari/appcenter-publish-plugin.svg)](https://jitpack.io/#TeamWanari/appcenter-publish-plugin)
 [![Travis](https://travis-ci.org/TeamWanari/appcenter-publish-plugin.svg?branch=master)](https://travis-ci.org/TeamWanari/appcenter-publish-plugin/builds)
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/TeamWanari/appcenter-publish-plugin/blob/master/LICENSE)
