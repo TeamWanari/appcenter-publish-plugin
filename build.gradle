@@ -3,6 +3,9 @@ buildscript {
     ext.serialization_version = '0.6.2'
     ext.okhttp = '3.11.0'
 
+    ext['gradle.publish.key'] = System.env.gradlePublishKey
+    ext['gradle.publish.secret'] = System.env.gradlePublishSecret
+
     repositories {
         jcenter()
         google()
@@ -11,6 +14,5 @@ buildscript {
 
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.jetbrains.kotlinx:kotlinx-gradle-serialization-plugin:$serialization_version"
     }
 }
