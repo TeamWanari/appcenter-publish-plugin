@@ -1,7 +1,7 @@
 package com.teamwanari.appcenter
 
+import com.google.gson.Gson
 import com.teamwanari.appcenter.entities.*
-import kotlinx.serialization.json.JSON
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level.BASIC
@@ -99,7 +99,7 @@ open class AppCenterUploadTask : DefaultTask() {
         }
 
         return response.body()?.use {
-            JSON.parse<InitResponse>(it.string())
+            Gson().fromJson(it.string(), InitResponse::class.java)
         } ?: throw IllegalStateException("Empty response body!")
     }
 
@@ -140,7 +140,7 @@ open class AppCenterUploadTask : DefaultTask() {
                 .addHeader(HEADER_TOKEN, config.apiToken)
                 .patch(RequestBody.create(
                         MediaType.parse(MEDIA_TYPE_JSON),
-                        JSON.stringify(CommitRequest())))
+                        Gson().toJson(CommitRequest())))
                 .build()
 
         val response = okHttpClient.newCall(request).execute()
@@ -150,7 +150,7 @@ open class AppCenterUploadTask : DefaultTask() {
         }
 
         return response.body()?.use {
-            JSON.parse<CommitResponse>(it.string())
+            Gson().fromJson(it.string(), CommitResponse::class.java)
         } ?: throw IllegalStateException("Empty response body!")
     }
 
@@ -165,7 +165,7 @@ open class AppCenterUploadTask : DefaultTask() {
                 .addHeader(HEADER_TOKEN, config.apiToken)
                 .patch(RequestBody.create(
                         MediaType.parse(MEDIA_TYPE_JSON),
-                        JSON.stringify(DistributionRequest(
+                        Gson().toJson(DistributionRequest(
                                 destination_name = config.destination,
                                 release_notes = config.releaseNotes))))
                 .build()
