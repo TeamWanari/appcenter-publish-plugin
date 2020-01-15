@@ -17,7 +17,7 @@ gradlePlugin {
     plugins {
         simplePlugin {
             id = 'com.teamwanari.appcenter-publish-plugin'
-            version = '0.0.2'
+            version = '0.0.3'
             displayName = 'AppCenterPlugin'
             description = 'Uploads selected artifacts to AppCenter.'
             implementationClass = 'com.teamwanari.appcenter.AppCenterPlugin'

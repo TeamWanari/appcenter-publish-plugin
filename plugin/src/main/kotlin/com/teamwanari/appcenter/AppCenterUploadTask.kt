@@ -109,6 +109,7 @@ open class AppCenterUploadTask : DefaultTask() {
                 .url(uploadUrl)
                 .addHeader(HEADER_CONTENT_TYPE, MEDIA_TYPE_MULTI_FORM)
                 .post(MultipartBody.Builder()
+                        .setType(MultipartBody.FORM)
                         .addFormDataPart(PART_KEY_ARTIFACT, config.artifact.name,
                                 RequestBody.create(
                                         MediaType.parse(MEDIA_TYPE_OCTET),
